@@ -1,0 +1,16 @@
+[Unit]
+Description=LinuxGSM Valheim Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=valheim-server
+WorkingDirectory=/home/valheim-server/valheim-server
+RemainAfterExit=yes
+ExecStart=/home/valheim-server/valheim-server/update_and_start.sh
+ExecStop=/home/valheim-server/valheim-server/vhserver stop
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
