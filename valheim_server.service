@@ -5,11 +5,11 @@ Wants=network-online.target
 
 [Service]
 Type=forking
-User=valheim-server
-WorkingDirectory=/home/valheim-server/valheim-server
+User=ubuntu
+WorkingDirectory=/home/ubuntu/valheim_server
 RemainAfterExit=yes
-ExecStart=/home/valheim-server/valheim-server/update_and_start.sh
-ExecStop=/home/valheim-server/valheim-server/vhserver stop
+ExecStart=/home/ubuntu/valheim_server/update_and_start.sh
+ExecStop=/home/ubuntu/valheim_server/vhserver stop
 Restart=no
 
 [Install]

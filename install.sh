@@ -10,7 +10,7 @@ wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm
 ./vhserver install
 
 # Configure files and enable boot startup
-ln -s ~/.config/unity3d/IronGate/Valheim/ Valheim
-cp adminlist.txt ~/Valheim/
-cp update_and_start.sh ~/valheim_server/
-sudo cp valheim_server.service /etc/systemd/system/
+ln -s ~/.config/unity3d/IronGate/Valheim/ ~/Valheim
+cp ./adminlist.txt ~/Valheim/
+cp ./update_and_start.sh ~/valheim_server/
+sudo cp ./valheim_server.service /etc/systemd/system/
