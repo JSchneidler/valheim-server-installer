@@ -21,4 +21,7 @@ mkdir -p ~/.config/unity3d/IronGate/Valheim/
 ln -s ~/.config/unity3d/IronGate/Valheim ~/Valheim
 cp $script_dir/adminlist.txt ~/Valheim/
 cp $script_dir/update_and_start.sh ~/valheim_server/
+chmod +x ~/valheim_server/update_and_start.sh
 sudo cp $script_dir/valheim_server.service /etc/systemd/system/
+sudo systemctl enable valheim_server.service
+sudo systemctl daemon-reload
