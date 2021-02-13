@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Fail out if any errors occur
+set -e
+
+script_dir=$(pwd)
+
 # Install dependencies
 sudo dpkg --add-architecture i386
 sudo apt update
@@ -12,7 +17,8 @@ wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm
 ./vhserver install
 
 # Configure files and enable boot startup
-ln -s ~/.config/unity3d/IronGate/Valheim/ ~/Valheim
-cp ./adminlist.txt ~/Valheim/
-cp ./update_and_start.sh ~/valheim_server/
-sudo cp ./valheim_server.service /etc/systemd/system/
+mkdir -p ~/.config/unity3d/IronGate/Valheim/
+ln -s ~/.config/unity3d/IronGate/Valheim ~/Valheim
+cp $script_dir/adminlist.txt ~/Valheim/
+cp $script_dir/update_and_start.sh ~/valheim_server/
+sudo cp $script_dir/valheim_server.service /etc/systemd/system/
